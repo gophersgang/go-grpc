@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/micro/go-grpc"
-	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
 	"github.com/micro/go-micro"
+	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
 
 	"golang.org/x/net/context"
 )
