@@ -8,6 +8,9 @@ Find an example greeter service in [examples/greeter](https://github.com/micro/g
 
 ## Write services identical to Micro
 
+Initialisation of a go-grpc service is identical to a go-micro service. Which means you can swap out `micro.NewService` for `grpc.NewService` 
+with zero other code changes. 
+
 ```go
 package main
 
