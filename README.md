@@ -8,7 +8,7 @@ Find an example greeter service in [examples/greeter](https://github.com/micro/g
 
 ## Write services identical to Micro
 
-```
+```go
 package main
 
 import (
