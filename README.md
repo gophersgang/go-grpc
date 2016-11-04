@@ -52,3 +52,49 @@ func main() {
 	}
 }
 ```
+
+# Use client/server directly
+
+This library is actually only 30 lines of code that simplifies initialisation of a go-micro.Service. You can do the same yourself.
+
+```go
+package main
+
+import (
+	"log"
+
+	"github.com/micro/go-micro"
+	client "github.com/micro/go-plugins/client/grpc"
+	server "github.com/micro/go-plugins/server/grpc"
+
+	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
+)
+
+type Say struct{}
+
+func (s *Say) Hello(ctx context.Context, req *hello.Request, rsp *hello.Response) error {
+	log.Print("Received Say.Hello request")
+	rsp.Msg = "Hello " + req.Name
+	return nil
+}
+
+func main() {
+	// new micro service with grpc client/server
+	service := micro.NewService(
+		micro.Client(client.NewClient()),
+		micro.Server(server.NewServer()),
+		micro.Name("go.micro.srv.example"),
+	)
+
+	// parse command line flags
+	service.Init()
+
+	// register handler
+	hello.RegisterSayHandler(service.Server(), new(Say))
+
+	// run service
+	if err := service.Run(); err != nil {
+		log.Fatal(err)
+	}
+}
+```
