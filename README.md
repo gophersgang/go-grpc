@@ -70,6 +70,8 @@ import (
 	server "github.com/micro/go-plugins/server/grpc"
 
 	hello "github.com/micro/go-grpc/examples/greeter/server/proto/hello"
+
+	"golang.org/x/net/context"
 )
 
 type Say struct{}
