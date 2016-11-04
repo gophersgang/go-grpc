@@ -87,7 +87,7 @@ func main() {
 	service := micro.NewService(
 		micro.Client(client.NewClient()),
 		micro.Server(server.NewServer()),
-		micro.Name("go.micro.srv.example"),
+		micro.Name("go.micro.srv.greeter"),
 	)
 
 	// parse command line flags
