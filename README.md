@@ -53,7 +53,7 @@ func main() {
 }
 ```
 
-# Use client/server directly
+## Use client/server directly
 
 This library is actually only 30 lines of code that simplifies initialisation of a go-micro.Service. You can do the same yourself.
 
