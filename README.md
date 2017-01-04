@@ -3,7 +3,7 @@
 Go-GRPC is a micro based gRPC framework for microservices.
 
 Go-GRPC provides a [go-micro.Service](https://godoc.org/github.com/micro/go-micro#Service) leveraging gRPC plugins for the client, server and transport. Go-GRPC shares the [go-micro](https://github.com/micro/go-micro) codebase, making it a pluggable gRPC framework for microservices. Everything works 
-just like a go-micro, using micro generated protobufs and defaulting to consul for service discovery.
+just like a go-micro service, using micro generated protobufs and defaulting to consul for service discovery.
 
 Find an example greeter service in [examples/greeter](https://github.com/micro/go-grpc/tree/master/examples/greeter).
 
